@@ -154,7 +154,7 @@ COMMON STYLE END
 *********************************/
 .servise__section {
   padding: 90px 0 31px;
-  background-image: url("/assets/images/servise-bg.png");
+  background-image: url("assets/images/servise-bg.png");
   background-repeat: no-repeat;
   background-position: center top 23%;
 }
@@ -262,7 +262,7 @@ COMMON STYLE END
   left: 0;
   width: 197px;
   height: 210px;
-  background-image: url("/assets/images/papir-image.svg");
+  background-image: url("assets/images/papir-image.svg");
   background-position: left top;
   background-repeat: no-repeat;
   background-size: cover;
