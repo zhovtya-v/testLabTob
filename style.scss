@@ -312,8 +312,8 @@ COMMON STYLE END
 		letter-spacing: 0.45px;
 		color: $secondary-text-color;
 		text-transform: uppercase;
-		border: 1px solid $primary-btn-bg;
-		background: $primary-btn-bg;
+		border: none;
+    	background: transparent;
 		margin: 0 auto;
 		@include flexbox-center;
 		z-index: 2;
@@ -321,7 +321,35 @@ COMMON STYLE END
 		bottom: -27px;
 		left: 50%;
 		@include transform(translate(-50%,0));
+		@include transition(all 0.15s);
 		cursor: pointer;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			background-color: $primary-btn-bg;
+			transition: all 0.3s;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 100%;
+			z-index: 1;
+			background-color: $secondary-text-color;
+			@include transition(width 0.3s);
+		}
+
+		span {
+			z-index: 2;
+		}
 
 		@include min-medium {
 			max-width: 390px;
@@ -330,6 +358,13 @@ COMMON STYLE END
 			left: 124px;
 			bottom: -37px;
 			@include transform(translate(0,0));
+
+			&:hover {
+				color: #ffffff;
+				&:after {
+					width: 100%;
+				}
+			}
 		}
 	}
 
