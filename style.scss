@@ -1,0 +1,370 @@
+@import "assets/scss/mixin";
+@import "assets/scss/variable";
+@import "assets/scss/fonts";
+
+
+/*********************************
+COMMON STYLE
+*********************************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+a,
+:before, :after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+a,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+
+a, a:hover, a:focus,
+input, input:hover, input:focus,
+textarea, textarea:hover, textarea:focus,
+button, button:hover, button:focus, select {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1,h2,h3,h4,h5,h6 {margin: 0;}
+body {
+  font-family: 'Proxima Nova Rg', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
+  background-color: $primary-background;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0 30px;
+  width: 100%;
+
+  @media only screen and (min-width: 992px) {
+    max-width: 1232px;
+    margin: 0 auto;
+  }
+
+}
+
+.position-relative {
+	position: relative;
+}
+
+.section {
+	&__dark-bg {
+		background-color: $secondary-background;
+
+		.section__title {
+			color: $primary-title-color;
+		}
+	}
+
+	&__title {
+		font-family: "Proxima Nova Bl", sans-serif;
+		font-weight: 900;
+		
+		letter-spacing: 0.9px;
+		text-transform: uppercase;
+		font-size: 30px;
+		line-height: 1.22;
+		margin-bottom: 60px;
+		
+		@include min-medium {
+			font-size: 48px;
+			letter-spacing: 1.44px;
+			margin-bottom: 124px;
+		}
+	}
+
+	&__title-label {
+		position: relative;
+		padding-top: 45px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 20px;
+			background-color: #1F65D9;
+			clip-path: polygon(100% 0%, 180% 0%, 0% 100%, -70% 100%);
+		}
+
+		@include min-medium {
+			&:before {
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+}
+
+.element-animation-js {
+	opacity: 0;
+	-webkit-transform: translateY(50px);
+    transform: translateY(50px);
+
+	&.element-show-js {
+		opacity: 1;
+		transition: all 1.5s;
+		transform: translateY(0%);
+	  }
+}
+/*********************************
+COMMON STYLE END
+*********************************/
+
+.servise {
+    &__section {
+		padding: 90px 0 31px;
+
+		background-image: url("/assets/images/servise-bg.png");
+		background-repeat: no-repeat;
+		background-position: center top 23%;
+
+		@include min-medium {
+			padding: 132px 0 197px;
+			background-position: center top 28%;
+		}
+	}
+
+	&__items {
+		@include min-medium {
+			@include flexbox;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		margin-bottom: 50px;
+
+		@include min-medium {
+			margin-bottom: 95px;
+			width: 50%;
+			padding: 0 40px 0 99px;
+		}
+	}
+
+	&__item-icon {
+		width: 36px;
+		height: 36px;
+		margin-bottom: 30px;
+		display: block;
+		img {
+			width: 100%;
+			vertical-align: bottom;
+		}
+
+		@include min-medium {
+			width: 54px;
+			height: 54px;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__item-title {
+		font-family: "Proxima Nova Bd", sans-serif;
+		font-weight: 700;
+		color: $primary-title-color;
+		letter-spacing: 0.44px;
+		text-transform: capitalize;
+		font-size: 22px;
+		line-height: 1.22;
+		margin-bottom: 34px;
+
+		@include min-medium {
+			font-size: 32px;
+			letter-spacing: 0.64px;
+			margin-bottom: 50px;
+		}
+	}
+
+	&__item-text {
+		font-family: "Proxima Nova Lt", sans-serif;
+		font-weight: 300;
+		color: $primary-text-color;
+		letter-spacing: 0.32px;
+		font-size: 16px;
+		line-height: 1.5;
+
+		@include min-medium {
+			font-size: 18px;
+			letter-spacing: 0.36px;
+			line-height: 1.6;
+		}
+	}
+}
+
+
+.our-lightpaper {
+	&__section {
+		@include min-medium {
+			margin-top: -108px;
+			margin-bottom: 34px;
+
+			.container {
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: calc(100% - 30px);
+					width: 500px;
+					background-color: #1F65D9;
+				}
+
+			}
+			
+		}
+	}
+
+	&__item-info {
+		margin: 0 -30px;
+		background-color: #1F65D9;
+		position: relative;
+		padding: 195px 30px 65px 30px;
+
+		&:after {
+			@include psevdo-absolute;
+			bottom: 0;
+			left: 0;
+			width: 197px;
+			height: 210px;
+			background-image: url("/assets/images/papir-image.svg");
+			background-position: left top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 0.1;
+		}
+
+		@include min-medium {
+			padding: 60px 30px 90px;
+		}
+
+		@include min-large {
+			@include flexbox;
+			align-items: center;
+			min-height: 310px;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	&__title {
+		font-family: "Proxima Nova Th", sans-serif;
+		font-weight: 800;
+		color: $primary-title-color;
+		letter-spacing: 0.64px;
+		font-size: 22px;
+		line-height: 1.2;
+		margin-bottom: 51px;
+		text-transform: uppercase;
+
+		@include min-medium {
+			font-size: 32px;
+			letter-spacing: 0.64px;
+			margin-bottom: 35px;
+		}
+
+		@include min-large {
+			margin-bottom: 92px;
+		}
+	}
+
+	&__text {
+		font-family: "Proxima Nova Lt", sans-serif;
+		font-weight: 300;
+		color: $main-text-color;
+		letter-spacing: 0.32px;
+		font-size: 16px;
+		line-height: 1.5;
+		max-width: 210px;
+
+		@include min-medium {
+			font-size: 24px;
+			letter-spacing: 0.48px;
+			line-height: 1.42;
+			margin: 0;
+		}
+
+	
+		@include min-large {
+			margin: 23px 0 0 60px;
+		}
+	}
+
+	&__button {
+		max-width: 280px;
+		width: 100%;
+		height: 54px;
+		font-size: 16px;
+		font-family: "Proxima Nova Bd", sans-serif;
+		font-weight: 700;
+		letter-spacing: 0.45px;
+		color: $secondary-text-color;
+		text-transform: uppercase;
+		border: 1px solid $primary-btn-bg;
+		background: $primary-btn-bg;
+		margin: 0 auto;
+		@include flexbox-center;
+		z-index: 2;
+		position: absolute;
+		bottom: -27px;
+		left: 50%;
+		@include transform(translate(-50%,0));
+		cursor: pointer;
+
+		@include min-medium {
+			max-width: 390px;
+			height: 74px;
+			font-size: 22px;
+			left: 124px;
+			bottom: -37px;
+			@include transform(translate(0,0));
+		}
+	}
+
+	&__item-image {
+		position: absolute;
+		top: -41px;
+		right: 0;
+		bottom: 37px;
+		width: 100%;
+		z-index: 1;
+		overflow: hidden;
+		max-width: 298px;
+
+		img {
+			width: auto;
+			height: 100%;
+		}
+
+		@include min-small {
+			max-width: 500px;
+			bottom: -100px;
+		}
+
+		@include min-medium {
+			width: 100%;
+			max-width: 679px;
+			bottom: -210px;
+			top: -74px;
+			right: 14px;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+}
